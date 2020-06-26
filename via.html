@@ -1,0 +1,288 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+    </script>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap">
+    <style>
+      body {
+        font-family: 'EB Garamond', serif;
+        font-size: 36px;
+      }
+      	.multiline {
+	    white-space: pre-wrap;
+	}
+	.content {
+	    max-width: 870px;
+	    margin: auto;
+	    cursor: pointer;
+	}
+	.handy tr {
+	    cursor: pointer;
+	}
+    </style>
+</head>
+
+<body title="Click anywhere on text to see another translation.">
+<br /><br />
+  <div class="content" onClick="window.location.reload();" title="Click anywhere on text to see another translation.">
+    Nel mezzo del cammin di nostra vita<br />
+    mi ritrovai per una selva oscura<br />
+    che la diritta via era smarrita<br /><br />
+    &emsp; The Divine Comedy &ndash; Pt. 1 Inferno &ndash; Canto I &ndash; (1&ndash;3)<br />
+
+<br />
+
+    <p class="handy" id="randomText" onClick="window.location.reload();" title="Click anywhere on text to see another translation."></p>
+
+    See <a href="stats.html">statistics<a/>.
+
+<p style="text-align:right;">based on<br />
+<a href="http://carolinebergvall.com/wp-content/uploads/2018/08/VIA.pdf">Via, 48 Dante Variations</a><br />
+by Caroline Bergvall</p>
+    
+</div>
+
+
+  
+<script>
+var texts = [`1. <br />
+Along the journey of our life half way<br />
+I found myself again in a dark wood<br />
+wherein the straight road no longer lay<br /><br />
+&emsp;     (Dale, 1996)`,
+    `2. <br />
+At the midpoint in the journey of our life<br />
+I found myself astray in a dark wood<br />
+For the straight path had vanished.<br /><br />
+&emsp;     (Creagh and Hollander, 1989)`,
+    `3. <br />
+<span style="font-variant: small-caps;">half</span> over the wayfaring of our life,<br />
+Since missed the right way, through a night-dark wood<br />
+Struggling, I found myself.<br /><br />
+&emsp;     (Musgrave, 1893)`,
+    `4. <br />
+Half way along the road we have to go,<br />
+I found myself obscured in a great forest,<br />
+Bewildered, and I knew I had lost the way.<br /><br />
+&emsp;     (Sisson, 1980)`,
+    `5. <br />
+Halfway along the journey of our life<br />
+I woke in wonder in a sunless wood<br />
+For I had wandered from the narrow way<br /><br />
+&emsp;     (Zappulla, 1998)`,
+    `6. <br />
+<span style="font-variant: small-caps;">halfway</span> on our life\'s journey, in a wood,<br />
+From the right path I found myself astray.<br /><br />
+&emsp;     (Heaney, 1993)`,
+    `7. <br />
+Halfway through our trek in life,<br />
+I found myself in this dark wood,<br />
+miles away from the right road.<br /><br />
+&emsp;     (Ellis, 1994)`,
+    `8. <br />
+Half-way upon the journey of our life,<br />
+I found myself within a gloomy wood,<br />
+By reason that the path direct was lost.<br /><br />
+&emsp;     (Pollock, 1854)`,
+    `9. <br />
+<span style="font-variant: small-caps;">half-way</span> upon the journey of our life<br />
+I roused to find myself within a forest<br />
+In darkness, for the straight way had been lost.<br /><br />
+&emsp;     (Johnson, 1915)`,
+    `10. <br />
+In middle of the journey of our days<br />
+I found that I was in a darksome wood<br />
+the right road lost and vanished in the maze<br /><br />
+&emsp;     (Sibbald, 1884)`,
+    `11. <br />
+In midway of the journey of our life<br />
+I found myself within a darkling wood,<br />
+Because the rightful pathway had been lost.<br /><br />
+&emsp;     (Rossetti, 1865)`,
+    `12. <br />
+In our life\'s journey at its midway stage<br />
+I found myself within a wood obscure<br />
+Where the right path which guided me was lost<br /><br />
+&emsp;     (Johnston, 1867)`,
+    `13. <br />
+In the middle of the journey<br />
+of our life<br />
+I came to myself<br />
+In a dark forest<br />
+The straightforward way<br />
+Misplaced.<br /><br />
+&emsp;     (Schwerner, 2000)`,
+    `14. <br />
+In the middle of the journey of our life I came to<br />
+myself in a dark wood, for the straight road was lost<br /><br />
+&emsp;     (Durling, 1996)`,
+    `15. <br />
+In the middle of the journey of our life I came to myself<br />
+within a dark wood where the straight road was lost.<br /><br />
+&emsp;     (Sinclair, 1939)`,
+    `16. <br />
+In the middle of the journey of our life<br />
+I found myself astray in a dark wood<br />
+where the straight road had been lost sight of.<br /><br />
+&emsp;     (Heaney, 1993)`,
+    `17. <br />
+IN the middle of the journey of our life, I found myself in a<br />
+dark wood; for the straight way was lost.<br /><br />
+&emsp;     (John A Carlyle, 1844)`,
+    `18. <br />
+In the mid-journey of our mortal life,<br />
+I wandered far into a darksome wood,<br />
+Where the true road no longer might be seen.<br /><br />
+&emsp;     (Chaplin, 1913)`,
+    `19. <br />
+In the midtime of life I found myself<br />
+Within a dusky wood; my way was lost.<br /><br />
+&emsp;     (Shaw, 1914)`,
+    `20. <br />
+In the midway of this our mortal life,<br />
+I found me in a gloomy wood, astray,<br />
+Gone from the path direct:<br /><br />
+&emsp;     (Cary, 1805)`,
+    `21. <br />
+Just halfway through this journey of our life<br />
+I reawoke to find myself inside<br />
+a dark wood, way off-course, the right road lost<br /><br />
+&emsp;     (Phillips, 1983)`,
+    `22. <br />
+Midway along the highroad of our days,<br />
+I found myself within a shadowy wood,<br />
+Where the straight path was lost in tangled ways.<br /><br />
+&emsp;     (Wheeler, 1911)`,
+    `23. <br />
+Midway along the journey of our life<br />
+I woke to find myself in some dark woods,<br />
+for I had wandered off from the straight path.<br /><br />
+&emsp;     (Musa, 1971)`,
+    `24. <br />
+Midway along the span of our life\'s road<br />
+I woke to a dark wood unfathomable<br />
+Where not a vestige of the right way shewed.<br /><br />
+&emsp;     (Foster, 1961)`,
+    `25. <br />
+Midway in our life\'s journey I went astray<br />
+from the straight road & woke to find myself<br />
+alone in a dark wood<br /><br />
+&emsp;     (Ciardi, 1996)`,
+    `26. <br />
+Midway in the journey of our life I found myself in a<br />
+dark wood, for the straight road was lost.<br /><br />
+&emsp;     (Singleton, 1970)`,
+    `27. <br />
+<span style="font-variant: small-caps;">midway</span> life\'s journey I was made aware<br />
+That I had strayed into a dark forest,<br />
+And the right path appeared not anywhere.<br /><br />
+&emsp;     (Binyon, 1933)`,
+    `28. <br />
+Midway on our life\'s journey, I found myself<br />
+In dark woods, the right road lost.<br /><br />
+&emsp;     (Pinsky, 1994)`,
+    `29. <br />
+Midway on the journey of our life I found myself within<br />
+a darksome wood, for the right way was lost.<br /><br />
+&emsp;     (Sullivan, 1893)`,
+    `30. <br />
+Midway the path of life that men pursue<br />
+I found me in a darkling wood astray,<br />
+For the direct way had been lost to view<br /><br />
+&emsp;     (Anderson, 1921)`,
+    `31. <br />
+Midway this way of life we\'re bound upon,<br />
+I woke to find myself in a dark wood,<br />
+Where the right road was wholly lost and gone<br /><br />
+&emsp;     (Sayers, 1949)`,
+    `32. <br />
+<span style="font-variant: small-caps;">midway</span> upon the course of this our life<br />
+I found myself within a gloom-dark wood,<br />
+For I had wandered from the path direct.<br /><br />
+&emsp;     (Bodey, 1938)`,
+    `33. <br />
+<span style="font-variant: small-caps;">midway</span> upon the journey of my days<br />
+I found myself within a wood so drear,<br />
+That the direct path nowhere met my gaze.<br /><br />
+&emsp;     (Brooksbank, 1854)`,
+    `34. <br />
+<span style="font-variant: small-caps;">midway</span> upon the journey of our life,<br />
+I found me in a forest dark and deep,<br />
+For I the path direct had failed to keep.<br /><br />
+&emsp;     (Wilstach, 1888)`,
+    `35. <br />
+Midway upon the journey of our life,<br />
+I found myself within a forest dark,<br />
+For the right road was lost.<br /><br />
+&emsp;     (Vincent, 1904)`,
+    `36. <br />
+<span style="font-variant: small-caps;">midway</span> upon the journey of our life<br />
+I found myself within a forest dark,<br />
+For the straightforward pathway had been lost.<br /><br />
+&emsp;     (Longfellow, 1867)`,
+    `37. <br />
+Midway upon the journey of our life<br />
+I found that I had strayed into a wood<br />
+So dark the right road was completely lost.<br /><br />
+&emsp;     (MacKenzie, 1979)`,
+    `38. <br />
+<span style="font-variant: small-caps;">midway</span> upon the journey of our life<br />
+I woke to find me astray in a dark wood,<br />
+Confused by ways with the straight way at strife<br /><br />
+&emsp;     (Bickersteth, 1955)`,
+    `39. <br />
+Midway upon the pathway of life<br />
+I found myself within a darksome wood<br />
+wherein the proper road was lost to view.<br /><br />
+&emsp;     (Edwardes, 1915)`,
+    `40. <br />
+midway upon the road of our life I found myself within<br />
+a dark wood, for the right way had been missed.<br /><br />
+&emsp;     (Norton, 1891)`,
+    `41. <br />
+On traveling one half of our life\'s way,<br />
+I found myself in darkened forests when<br />
+I lost the straight and narrow path to stray.<br /><br />
+&emsp;     (Arndt, 1994)`,
+    `42. <br />
+Upon the journey of my life midway,<br />
+I found myself within a darkling wood,<br />
+Where from the straight path I had gone astray<br /><br />
+&emsp;     (Minchin, 1885)`,
+    `43. <br />
+<span style="font-variant: small-caps;">upon</span> the journey of our life half way,<br />
+I found myself within a gloomy wood,<br />
+For I had missed the oath and gone astray.<br /><br />
+&emsp;     (Pike, 1881)`,
+    `44. <br />
+Upon the journey of our life midway<br />
+I came unto myself in a dark wood,<br />
+For from the straight path I had gone astray.<br /><br />
+&emsp;     (Fletcher, 1931)`,
+    `45. <br />
+Upon the journey of our life midway,<br />
+I found myself within a darksome wood,<br />
+As from the right path I had gone astray.<br /><br />
+&emsp;     (Cayley, 1851)`,
+    `46. <br />
+When half-way through the journey of our life<br />
+I found that I was in a gloomy wood,<br />
+because the path which led aright was lost.<br /><br />
+&emsp;     (Langdon, 1918)`,
+    `47. <br />
+When I had journeyed half of our life\'s way,<br />
+I found myself within a shadowed forest,<br />
+for I had lost the path that does not stray.<br /><br />
+&emsp;     (Mandelbaum, 1980)`
+];
+document.getElementById('randomText').innerHTML = texts[Math.floor(Math.random()*texts.length)];
+
+</script>
+
+</body>
+
+</html>
